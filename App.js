@@ -1,8 +1,11 @@
 import React from 'react'
-import {HomeScreen} from '~/screens/index'
+import {UserProvider} from '~/tools/context/user/index'
+import {AppNavigator} from '~/navigation/index'
 
 export default function App() {
   return (
-    <HomeScreen />
+    <UserProvider>
+      <AppNavigator />
+    </UserProvider>
   )
 }
