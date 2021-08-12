@@ -1,8 +1,8 @@
 import React from 'react'
-import {View} from 'react-native'
+import {Box, Text} from 'native-base'
 
 export const HomeScreen = () => (
-    <View>
-        Hola
-    </View>
+  <Box flex={1} bg={'#fff'} alignItems="center" justifyContent="center">
+    <Text>Hola Mundo!!</Text>
+  </Box>
 )
