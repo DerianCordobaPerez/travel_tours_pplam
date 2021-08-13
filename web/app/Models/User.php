@@ -3,13 +3,25 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
-{
+/**
+ * @property mixed | string id
+ * @property mixed | string name
+ * @property mixed | string lastName
+ * @property mixed | string sex
+ * @property mixed | string nationality
+ * @property mixed | string avatar
+ * @property mixed | string email
+ * @property mixed | string password
+ * @mixin Builder
+ */
+class User extends Authenticatable {
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -19,6 +31,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'lastName',
+        'sex',
+        'nationality',
+        'avatar',
         'email',
         'password',
     ];
