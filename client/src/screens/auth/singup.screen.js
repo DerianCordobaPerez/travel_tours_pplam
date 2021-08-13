@@ -3,7 +3,7 @@ import {MaterialCommunityIcons} from '@expo/vector-icons'
 import {
   NativeBaseProvider,
   Box,
-  Text,
+  Tooltip,
   Heading,
   VStack,
   FormControl,
@@ -16,7 +16,7 @@ import {
   Center,
 } from 'native-base'
 
-export const SingInScreen = () => (
+export const SingUpScreen = () => (
   <NativeBaseProvider>
     <Box safeArea flex={1} p={2} w="90%" mx="auto">
       <Center marginTop={'40'}>
@@ -24,7 +24,7 @@ export const SingInScreen = () => (
           Bienvenido
         </Heading>
         <Heading color="muted.400" size="lg">
-          Inicia sesion para continuar
+          Registrate para continuar
         </Heading>
       </Center>
 
@@ -44,20 +44,20 @@ export const SingInScreen = () => (
             Contraseña
           </FormControl.Label>
           <Input type="password" />
-          <Link
-            _text={{fontSize: 'xs', fontWeight: '700', color: 'cyan.500'}}
-            alignSelf="flex-end"
-            mt={1}
+          <FormControl.Label
+            _text={{color: 'muted.700', fontSize: 'sm', fontWeight: 600}}
           >
-            Restaurar Contraseña?
-          </Link>
+            Confirmar Contraseña
+          </FormControl.Label>
+          <Input type="password" />
         </FormControl>
         <VStack space={2}>
           <Button colorScheme="cyan" _text={{color: 'white'}}>
-            Login
+            Singin
           </Button>
 
           <HStack justifyContent="center" alignItem="center">
+            <Tooltip label="Inicia sesion con facebook" openDelay={300}>
             <IconButton
               variant="unstyled"
               startIcon={
@@ -68,6 +68,8 @@ export const SingInScreen = () => (
                 />
               }
             />
+            </Tooltip>
+            <Tooltip label="Inicia sesion con Google" openDelay={300}>
             <IconButton
               variant="unstyled"
               startIcon={
@@ -78,29 +80,9 @@ export const SingInScreen = () => (
                 />
               }
             />
-            <IconButton
-              variant="unstyled"
-              startIcon={
-                <Icon
-                  as={<MaterialCommunityIcons name="github" />}
-                  color="muted.700"
-                  size="sm"
-                />
-              }
-            />
+            </Tooltip>
           </HStack>
         </VStack>
-        <HStack justifyContent="center">
-          <Text fontSize="sm" color="muted.700" fontWeight={400}>
-            No tienes una cuenta?.{' '}
-          </Text>
-          <Link
-            _text={{color: 'cyan.500', bold: true, fontSize: 'sm'}}
-            href="#"
-          >
-            Registrarse
-          </Link>
-        </HStack>
       </VStack>
     </Box>
   </NativeBaseProvider>
