@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { loadingScreen } from \"./loading\";","map":{"version":3,"sources":["/home/vianec/Documentos/proyectos/react native/travel_tours_pplam/src/screens/partials/index.js"],"names":["loadingScreen"],"mappings":"AAAA,SAAQA,aAAR","sourcesContent":["export {loadingScreen} from './loading'"]},"metadata":{},"sourceType":"module"}
