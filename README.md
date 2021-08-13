@@ -1,8 +1,7 @@
 # Medical Assitant App
-Medical Assistant es un proyecto desarrollado por 5 intregrantes de la Universidad Nacional Autonoma de Nicaragua (UNAN-LEON) con fines de participar en el concurso denominado hackaton llevado acabo cada final de año en dicho pais.
 
-### Objetivos
-- Implementar un manejo de enfermedades mas amenas para cualquier edad y condicion de las personas, permitir el uso y acceso sencillo con una interfaz de usuario intuitiva, Medical assitent a empezado su desarrollo el dia 18 de febrero del presente año (2021).
+Travel Tours procura facilitar las posibilidades de conocer Nicaragua, a un explorador de origen nacional o extranjero, nuestra aplicación móvil destacará los lugares más emblemáticos y atractivos del país, así como descripción y datos históricos del lugar, trazará las mejores y más accesibles rutas hacia el destino, haciendo uso de la geolocalización de los dispositivos móviles. Además, serán mostrados los lugares de hospedaje cercanos a la localización del aventurero, como también tiendas, farmacias o algún otro lugar donde nuestros exploradores puedan adquirir un bien o servicio; esto, si deciden quedarse por algunas semanas. Procurando elevar las tasas de ingresos turísticos en el país, dándole una mano en el viaje a nuestros exploradores a través de este.
 
 # Licencia
-[PPLAM](https://github.com/DerianCordobaPerez/Medical_Assistant_Pplam/blob/Master/LICENSE)
+
+[PPLAM](https://github.com/DerianCordobaPerez/travel_tours_pplam/blob/Master/LICENSE)
