@@ -1,1 +1,0 @@
-{"ast":null,"code":"export { ProfileScreen } from \"./profile.screen\";","map":{"version":3,"sources":["/home/vianec/Documentos/proyectos/react native/travel_tours_pplam/src/screens/user/index.js"],"names":["ProfileScreen"],"mappings":"AAAA,SAAQA,aAAR","sourcesContent":["export {ProfileScreen} from './profile.screen'"]},"metadata":{},"sourceType":"module"}
