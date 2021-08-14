@@ -1,9 +1,9 @@
 // Pantallas principales
 export {HomeScreen} from './home/home.screen'
 export {ProfileScreen} from './user/profile.screen'
-export {SettingsScreen} from './user/settings'
+export {SettingsScreen} from './user/settings.screen'
 
 // Pantallas de autenticacion
 export {SingInScreen} from './auth/singin.screen'
 export {SingUpScreen} from './auth/singup.screen'
-export {SingUp2Screen} from './auth/singup2names.screen'
+export {SingUpStepTwoScreen} from './auth/singupStepTwo.screen'

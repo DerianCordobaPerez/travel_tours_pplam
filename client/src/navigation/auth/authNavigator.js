@@ -1,6 +1,6 @@
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
-import {SingInScreen, SingUpScreen,SingUp2Screen} from '~/screens/index'
+import {SingInScreen, SingUpScreen,SingUpStepTwoScreen} from '~/screens/index'
 import {SIGNIN, SIGNUP,SIGNUP2} from '~/constants/index'
 
 const stack = createStackNavigator()
@@ -16,6 +16,6 @@ export const authNavigator = (props) => (
 
     <stack.Screen name={SIGNUP} children={() => <SingUpScreen {...props} />} />
 
-    <stack.Screen name={SIGNUP2} children={() => <SingUp2Screen {...props} />} />
+    <stack.Screen name={SIGNUP2} children={() => <SingUpStepTwoScreen {...props} />} />
   </stack.Navigator>
 )

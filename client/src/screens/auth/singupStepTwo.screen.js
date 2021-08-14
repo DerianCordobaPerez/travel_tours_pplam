@@ -16,7 +16,7 @@ import {
   Center,
 } from 'native-base'
 
-export const SingUp2Screen = () => (
+export const SingUpStepTwoScreen = () => (
   <NativeBaseProvider>
     <Box safeArea flex={1} p={2} w="90%" mx="auto">
       <Center marginTop={5}>
