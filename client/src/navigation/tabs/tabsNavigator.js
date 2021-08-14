@@ -1,9 +1,8 @@
 import React from 'react'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import {HomeScreen} from '~/screens/index'
 import {Ionicons} from '@expo/vector-icons'
-import {HOME, PROFILE} from '~/constants/index'
-import {ProfileScreen} from '~/screens/user/index'
+import {HOME, PROFILE, SETTINGS} from '~/constants/index'
+import {HomeScreen, ProfileScreen, SettingsScreen} from '~/screens/index'
 
 const tab = createBottomTabNavigator()
 
@@ -18,7 +17,8 @@ export const tabsButtonNavigator = (props) => (
           iconName = `ios-home${!focused ? '-outline' : ''}`
         else if (route.name === PROFILE)
           iconName = `ios-person-circle${!focused ? '-outline' : ''}`
-
+        else if (route.name === SETTINGS)
+          iconName = `settings${!focused ? '-outline' : ''}`
         return <Ionicons name={iconName} size={size} color={color} />
       },
     })}
@@ -27,8 +27,10 @@ export const tabsButtonNavigator = (props) => (
       inactiveTintColor: 'gray',
     }}
   >
-    <Tab.Screen name={HOME} children={() => <HomeScreen {...props} />} />
+    <tab.Screen name={HOME} children={() => <HomeScreen {...props} />} />
 
-    <Tab.Screen name={PROFILE} children={() => <ProfileScreen {...props} />} />
+    <tab.Screen name={PROFILE} children={() => <ProfileScreen {...props} />} />
+
+    <tab.Screen name={SETTINGS} children={() => <SettingsScreen {...props} />}/>
   </tab.Navigator>
 )

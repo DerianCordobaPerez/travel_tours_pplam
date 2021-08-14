@@ -32,7 +32,7 @@ export const Navigator = () => {
     >
       {loading ? (
         <stack.Screen name={SPLASH} component={loadingScreen} />
-      ) : !token ? (
+      ) : token ? (
         <stack.Screen name={SIGNIN} component={authNavigator} />
       ) : (
         <stack.Screen name={TABS} component={tabsButtonNavigator} />
