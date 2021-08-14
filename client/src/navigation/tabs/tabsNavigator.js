@@ -19,6 +19,7 @@ export const tabsButtonNavigator = (props) => (
           iconName = `ios-person-circle${!focused ? '-outline' : ''}`
         else if (route.name === SETTINGS)
           iconName = `settings${!focused ? '-outline' : ''}`
+          
         return <Ionicons name={iconName} size={size} color={color} />
       },
     })}
