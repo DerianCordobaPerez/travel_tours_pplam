@@ -1,0 +1,75 @@
+{
+  "segmentos_de_mercado": {
+    "pregunta": "quien",
+    "respuestas": {
+      "#1": "Personas turistas locales e intercionales",
+      "#2": "Administradores de servicios de los comercios"
+    }
+  },
+
+  "relaciones_con_clientes": {
+    "pregunta": "quien",
+    "respuestas": {
+      "#1": "Promocion de servicios de consumismo en los negocios asociados para los cliente mas recurrentes dentro de la aplicacion",
+      "#2": "Mejores recomendaciones sobre rutas a visitar con las preferencias del usuario"
+    }
+  },
+
+  "propuestas_de_valor": {
+    "pregunta": "que",
+    "respuestas": {
+      "#1": "Servicio de guia turistico totalmente en linea",
+      "#2": "Informacion de lugares emblematicos",
+      "#3": "Manejo de preferencias para facilitar las mejores rutas"
+    }
+  },
+
+  "actividades_clave": {
+      "pregunta": "que",
+      "respuestas": {
+          "#1": "Promociones sobre los servicios ofrecidos",
+          "#2": "Concursos con los clientes cuyos premios pueden provenir de los negocios asociados"
+      }
+  },
+
+  "asociaciones_clave": {
+    "pregunta": "como",
+    "respuestas": {
+      "#1": "Negocios cuyo servicio ofrecido concuerde con las necesidades del viajante"
+    }
+  },
+
+  "divulgacion": {
+    "pregunta": "cuales",
+    "respuestas": {
+      "#1": "La web y plataformas de descarga"
+    }
+  },
+
+  "recursos_del_cliente": {
+    "pregunta": "cuales",
+    "respuestas": {
+        "#1": "Acceso a la red",
+        "#2": "Acceso a las plataformas de descarga",
+        "#3": "Plataformas de distribucion de publicidad"
+    }  
+  },
+
+  "fuentes_de_ingreso": {
+    "pregunta": "cuanto",
+    "respuestas": {
+        "#1": "Marketing y publicidad en redes sociales con el nombre de la aplicacion",
+        "#2": "Relaciones con los comercios o empresas",
+        "#3": "Fomentar el uso recurrentes de la aplicacion"
+    }
+  },
+
+  "estructura_costos": {
+    "pregunta": "cuanto",
+    "respuestas": {
+        "#1": "Despliegue de la aplicacion en las plataformas moviles y web",
+        "#2": "Infraestructura interna",
+        "#3": "Mantenimientos generales como de la aplicacion o su hardware"
+    }
+  }
+}

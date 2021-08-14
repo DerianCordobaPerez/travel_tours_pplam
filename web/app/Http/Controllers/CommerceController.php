@@ -3,39 +3,38 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commerce;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class CommerceController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Renderiza la vista principal del negocio
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function index()
-    {
-        //
+    public function index(): View {
+        return view('');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Renderiza la vista de creacion de commerce
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function create()
-    {
-        //
+    public function create(): View {
+        return view('');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena el commerce dentro de la db
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request): RedirectResponse {
+        return redirect()->route('');
     }
 
     /**
@@ -44,9 +43,8 @@ class CommerceController extends Controller
      * @param  \App\Models\Commerce  $commerce
      * @return \Illuminate\Http\Response
      */
-    public function show(Commerce $commerce)
-    {
-        //
+    public function show(Commerce $commerce) {
+        
     }
 
     /**
