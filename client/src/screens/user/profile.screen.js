@@ -1,9 +1,13 @@
 import React, {useState} from 'react'
 import {StyleSheet,Image, TouchableOpacity, Platform} from 'react-native'
-import {NativeBaseProvider, Stack, Text,Divider,} from 'native-base'
+import {NativeBaseProvider, Stack, Text,Divider,Modal,Button, Center} from 'native-base'
+import { Feather } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker'
 
 export const ProfileScreen = () => {
+
+  const [showModal, setShowModal] = useState(false)
+
   const [selectedImage, setSelectedImage] = useState(null)
 
   let openImagePickerAsync = async () => {
@@ -48,7 +52,7 @@ export const ProfileScreen = () => {
           md: 'flex-start',
         }}
       >
-        <TouchableOpacity onPress={openImagePickerAsync}>
+        <TouchableOpacity onPress={() => setShowModal(true)}>
           <Image
             source={{
               uri:
@@ -56,8 +60,23 @@ export const ProfileScreen = () => {
                   ? selectedImage.localUri
                   : 'https://picsum.photos/200/200',
             }}
-            style={styles.image}
+            style={styles.image}/>
+            <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+        <Modal.Content width="400px" height="400px">
+        <Image
+            source={{
+              uri:
+                selectedImage !== null
+                  ? selectedImage.localUri
+                  : 'https://picsum.photos/200/200',
+            }}
+            style={styles.imagebig}
           />
+          <TouchableOpacity onPress={openImagePickerAsync}>
+            <Center><Feather name="edit" size={24} color="black" /></Center>
+        </TouchableOpacity>
+        </Modal.Content>
+      </Modal>
         </TouchableOpacity>
         <Text bold fontSize={"xl"} marginTop={"5"} >{nombre} {apellido}</Text>
         <Text bold fontSize={"xl"} marginTop={"5"} >{nacionalidad}</Text>
@@ -78,5 +97,9 @@ const styles = StyleSheet.create({
     width: 150,
     resizeMode: 'contain',
     borderRadius: 100,
+  },
+  imagebig: {
+    height: 300,
+    width: 350,
   },
 })
