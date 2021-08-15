@@ -10,6 +10,10 @@ module.exports = {
   SETTINGS: 'settings',
   ABOUT: 'about',
 
+  // Api
+  SERVER: 'localhost:8080',
+  API: '/api',
+
   // Contexto
   USER_TOKEN: '@userToken',
 }
