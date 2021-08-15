@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {StyleSheet,Image, TouchableOpacity, Platform} from 'react-native'
-import {NativeBaseProvider, Stack, Text,Divider,Modal,Button, Center} from 'native-base'
+import {NativeBaseProvider, Stack, Text,Divider,Modal,Button, Center,useColorMode} from 'native-base'
 import { Feather } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker'
 
@@ -73,7 +73,7 @@ export const ProfileScreen = () => {
             style={styles.imagebig}
           />
           <TouchableOpacity onPress={openImagePickerAsync}>
-            <Center><Feather name="edit" size={24} color="black" /></Center>
+            <Center marginTop={'3'}><Feather name="edit" size={40} color="black" /></Center>
         </TouchableOpacity>
         </Modal.Content>
       </Modal>
