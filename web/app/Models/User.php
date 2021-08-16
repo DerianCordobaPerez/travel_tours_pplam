@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 /**
  * @property mixed | string id
@@ -21,7 +22,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property mixed | string password
  * @mixin Builder
  */
-class User extends Authenticatable {
+class User extends Authenticatable implements JWTSubject {
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -58,11 +59,13 @@ class User extends Authenticatable {
         'email_verified_at' => 'datetime',
     ];
 
-    public function generateToken()
+    public function getJWTIdentifier()
     {
-        $this->api_token = StringHelper::generateRandomString(60);
-        $this->save();
+        return $this->getKey();
+    }
 
-        return $this->api_token;
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 }

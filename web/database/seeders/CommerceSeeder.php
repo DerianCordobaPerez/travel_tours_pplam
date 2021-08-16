@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Commerce;
 use Illuminate\Database\Seeder;
 
 class CommerceSeeder extends Seeder
@@ -13,6 +14,10 @@ class CommerceSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Commerce::create([
+            'name' => 'panchos',
+            'subject' => 'comedor',
+            'description' => 'solo trabajamos los panchos'
+        ]);
     }
 }
