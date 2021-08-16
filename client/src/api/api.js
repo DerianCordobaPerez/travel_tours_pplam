@@ -29,7 +29,7 @@ class Api {
   /**
    * Peticion get a la api proporcionada
    *
-   * @param {*} route ruta a la que realizar la peticion
+   * @param {String} route ruta a la que realizar la peticion
    * @returns
    */
   async get(route) {
@@ -39,12 +39,34 @@ class Api {
   /**
    * Peticion post a la api proporcionada
    *
-   * @param {*} route ruta a la que realizar la peticion
+   * @param {String} route ruta a la que realizar la peticion
    * @param {*} data datos a mandar
    * @returns
    */
   async post(route, data) {
     return await this.apiCall(() => this.api.post(`${route}`, data))
+  }
+
+  /**
+   * Peticion put a la api proporcionada
+   *
+   * @param {String} route ruta al que realizar la peticion
+   * @param {*} data datos a mandar
+   * @returns
+   */
+  async put(route, data) {
+    return await this.apiCall(() => this.api.put(`${route}`, data))
+  }
+
+  /**
+   * Peticion delete a la api proporcionada
+   *
+   * @param {Stirng} route ruta a la que realizar la peticion
+   * @param {*} data datos con lo que realizar la accion
+   * @returns
+   */
+  async delete(route, data = null) {
+    return await this.apiCall(() => this.api.delete(`${route}`, data))
   }
 }
 
