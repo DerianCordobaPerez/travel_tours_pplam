@@ -1,11 +1,17 @@
 import React, {useState} from 'react'
-import {StyleSheet,Image, TouchableOpacity, Platform} from 'react-native'
-import {NativeBaseProvider, Stack, Text,Divider,Modal,Button, Center,useColorMode} from 'native-base'
-import { Feather } from '@expo/vector-icons';
+import {StyleSheet, Image, TouchableOpacity, Platform} from 'react-native'
+import {
+  NativeBaseProvider,
+  Stack,
+  Text,
+  Divider,
+  Modal,
+  Center,
+} from 'native-base'
+import {Feather} from '@expo/vector-icons'
 import * as ImagePicker from 'expo-image-picker'
 
 export const ProfileScreen = () => {
-
   const [showModal, setShowModal] = useState(false)
 
   const [selectedImage, setSelectedImage] = useState(null)
@@ -60,31 +66,42 @@ export const ProfileScreen = () => {
                   ? selectedImage.localUri
                   : 'https://picsum.photos/200/200',
             }}
-            style={styles.image}/>
-            <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-        <Modal.Content width="400px" height="400px">
-        <Image
-            source={{
-              uri:
-                selectedImage !== null
-                  ? selectedImage.localUri
-                  : 'https://picsum.photos/200/200',
-            }}
-            style={styles.imagebig}
+            style={styles.image}
           />
-          <TouchableOpacity onPress={openImagePickerAsync}>
-            <Center marginTop={'3'}><Feather name="edit" size={40} color="black" /></Center>
+          <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+            <Modal.Content width="400px" height="400px">
+              <Image
+                source={{
+                  uri:
+                    selectedImage !== null
+                      ? selectedImage.localUri
+                      : 'https://picsum.photos/200/200',
+                }}
+                style={styles.imagebig}
+              />
+              <TouchableOpacity onPress={openImagePickerAsync}>
+                <Center marginTop={'3'}>
+                  <Feather name="edit" size={40} color="black" />
+                </Center>
+              </TouchableOpacity>
+            </Modal.Content>
+          </Modal>
         </TouchableOpacity>
-        </Modal.Content>
-      </Modal>
-        </TouchableOpacity>
-        <Text bold fontSize={"xl"} marginTop={"5"} >{nombre} {apellido}</Text>
-        <Text bold fontSize={"xl"} marginTop={"5"} >{nacionalidad}</Text>
-        <Divider my={2}/>
-        <Text bold fontSize={"xl"} marginTop={"5"} >sexo</Text>
+        <Text bold fontSize={'xl'} marginTop={'5'}>
+          {nombre} {apellido}
+        </Text>
+        <Text bold fontSize={'xl'} marginTop={'5'}>
+          {nacionalidad}
+        </Text>
+        <Divider my={2} />
+        <Text bold fontSize={'xl'} marginTop={'5'}>
+          sexo
+        </Text>
         <Text>{sexo}</Text>
-        <Text bold fontSize={"xl"} marginTop={"5"} >correo</Text>
-        <Text >{email}</Text>
+        <Text bold fontSize={'xl'} marginTop={'5'}>
+          correo
+        </Text>
+        <Text>{email}</Text>
       </Stack>
     </NativeBaseProvider>
   )
@@ -92,7 +109,7 @@ export const ProfileScreen = () => {
 
 const styles = StyleSheet.create({
   image: {
-    marginTop : 40,
+    marginTop: 40,
     height: 150,
     width: 150,
     resizeMode: 'contain',
