@@ -3,81 +3,62 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commerce;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
 class CommerceController extends Controller
 {
     /**
      * Renderiza la vista principal del negocio
-     *
-     * @return View
      */
-    public function index(): View {
-        return view('');
+    public function index()
+    {
+        return Commerce::all();
     }
 
     /**
-     * Renderiza la vista de creacion de commerce
+     * Devuelve el comercio
      *
-     * @return View
+     * @param  Commerce $commerce
+     * @return Commerce
      */
-    public function create(): View {
-        return view('');
+    public function show(Commerce $commerce): Commerce
+    {
+        return $commerce;
     }
 
     /**
-     * Almacena el commerce dentro de la db
+     * Devuelve le comercio creado en formato json
      *
      * @param  Request  $request
-     * @return RedirectResponse
+     * @return JsonResponse
      */
-    public function store(Request $request): RedirectResponse {
-        return redirect()->route('');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Commerce  $commerce
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Commerce $commerce) {
-        
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Commerce  $commerce
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Commerce $commerce)
+    public function store(Request $request): JsonResponse
     {
-        //
+        return response()->json(Commerce::create($request->all()), 201);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Devuelve el comercio actualizado en formato de json
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Commerce  $commerce
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @param  Commerce  $commerce
+     * @return JsonResponse
      */
-    public function update(Request $request, Commerce $commerce)
+    public function update(Request $request, Commerce $commerce): JsonResponse
     {
-        //
+        return response()->json($commerce->update($request->all()), 200);
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Devuelve un json con la respuesta luego de borrar el comercio
      *
-     * @param  \App\Models\Commerce  $commerce
-     * @return \Illuminate\Http\Response
+     * @param  Commerce  $commerce
+     * @return JsonResponse
      */
     public function destroy(Commerce $commerce)
     {
-        //
+        $commerce->delete();
+        return response()->json(null, 204);
     }
 }
