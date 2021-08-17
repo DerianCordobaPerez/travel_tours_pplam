@@ -5,14 +5,20 @@ import {
   Box,
   Button,
   NativeBaseProvider,
+  AlertDialog,
 } from 'native-base'
 import {AntDesign} from '@expo/vector-icons'
 import {Ionicons} from '@expo/vector-icons'
-import { Entypo } from '@expo/vector-icons';
+import {Entypo} from '@expo/vector-icons'
+import { Feather } from '@expo/vector-icons'
 
 export const SettingsScreen = () => {
   const [isOpen, setIsOpen] = React.useState(false)
   const [isOpen1, setIsOpen1] = React.useState(false)
+
+  const [isOpenloguot, setIsOpenloguot] = React.useState(false)
+  const onClose = () => setIsOpenloguot(false)
+  const cancelRef = React.useRef()
 
   return (
     <NativeBaseProvider>
@@ -62,9 +68,7 @@ export const SettingsScreen = () => {
             )
           }
         >
-          <Text bold>
-            Ayuda y asistencia
-          </Text>
+          <Text bold>Ayuda y asistencia</Text>
         </Button>
         <PresenceTransition
           visible={isOpen1}
@@ -82,12 +86,39 @@ export const SettingsScreen = () => {
         </PresenceTransition>
       </Box>
       <Box marginTop={'2'} bg={'white'}>
-        <Button bg={'#EB2B2B'} startIcon={<Entypo name="log-out" size={24} color="white" />}>
+        <Button
+          onPress={() => setIsOpenloguot(!isOpenloguot)}
+          bg={'#EB2B2B'}
+          startIcon={<Entypo name="log-out" size={24} color="white" />}
+        >
           <Text color={'white'} bold>
             Cerrar session
           </Text>
         </Button>
       </Box>
+      <AlertDialog
+        leastDestructiveRef={cancelRef}
+        isOpen={isOpenloguot}
+        onClose={onClose}
+        motionPreset={'fade'}
+      >
+        <AlertDialog.Content>
+          <AlertDialog.Header>
+          <Feather name="alert-triangle" size={34} color="black" />
+          </AlertDialog.Header>
+          <AlertDialog.Body>
+            Estas seguro que quieres cerrar session
+          </AlertDialog.Body>
+          <AlertDialog.Footer>
+            <Button ref={cancelRef} onPress={onClose}>
+              Cancelar
+            </Button>
+            <Button colorScheme="red" ml={3}>
+              <Text bold color={"white"}>Cerrar session</Text>
+            </Button>
+          </AlertDialog.Footer>
+        </AlertDialog.Content>
+      </AlertDialog>
     </NativeBaseProvider>
   )
 }
