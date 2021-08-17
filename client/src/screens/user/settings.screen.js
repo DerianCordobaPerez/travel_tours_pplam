@@ -7,6 +7,8 @@ import {
   NativeBaseProvider,
 } from 'native-base'
 import {AntDesign} from '@expo/vector-icons'
+import {Ionicons} from '@expo/vector-icons'
+import { Entypo } from '@expo/vector-icons';
 
 export const SettingsScreen = () => {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -15,15 +17,19 @@ export const SettingsScreen = () => {
   return (
     <NativeBaseProvider>
       <Box marginTop={'2'}>
-        <Button bg={'#DCDADA'} onPress={() => setIsOpen(!isOpen)}>
-          <Text bold>
-            Configuracion{' '}
-            {isOpen ? (
-              <AntDesign name="caretdown" size={15} color="black" />
+        <Button
+          bg={'#DCDADA'}
+          onPress={() => setIsOpen(!isOpen)}
+          startIcon={<Ionicons name="settings" size={20} color="black" />}
+          endIcon={
+            isOpen ? (
+              <AntDesign name="caretdown" size={13} color="black" />
             ) : (
-              <AntDesign name="caretright" size={15} color="black" />
-            )}
-          </Text>
+              <AntDesign name="caretright" size={13} color="black" />
+            )
+          }
+        >
+          <Text bold>Configuracion</Text>
         </Button>
         <PresenceTransition
           visible={isOpen}
@@ -44,14 +50,20 @@ export const SettingsScreen = () => {
         </PresenceTransition>
       </Box>
       <Box marginTop={'2'} bg={'white'}>
-        <Button bg={'#DCDADA'} onPress={() => setIsOpen1(!isOpen1)}>
-          <Text bold>
-            Ayuda y asistencia{' '}
-            {isOpen1 ? (
-              <AntDesign name="caretdown" size={15} color="black" />
+        <Button
+          bg={'#DCDADA'}
+          onPress={() => setIsOpen1(!isOpen1)}
+          startIcon={<Ionicons name="help-circle" size={24} color="black" />}
+          endIcon={
+            isOpen ? (
+              <AntDesign name="caretdown" size={13} color="black" />
             ) : (
-              <AntDesign name="caretright" size={15} color="black" />
-            )}
+              <AntDesign name="caretright" size={13} color="black" />
+            )
+          }
+        >
+          <Text bold>
+            Ayuda y asistencia
           </Text>
         </Button>
         <PresenceTransition
@@ -70,7 +82,7 @@ export const SettingsScreen = () => {
         </PresenceTransition>
       </Box>
       <Box marginTop={'2'} bg={'white'}>
-        <Button bg={'#EB2B2B'}>
+        <Button bg={'#EB2B2B'} startIcon={<Entypo name="log-out" size={24} color="white" />}>
           <Text color={'white'} bold>
             Cerrar session
           </Text>
