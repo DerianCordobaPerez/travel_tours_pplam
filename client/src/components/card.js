@@ -1,15 +1,16 @@
 import React from 'react'
 import {Image, Text, Box, Stack, Heading} from 'native-base'
 
-export const Card = ({uri, header, body}) => {
+export const Card = ({ruta, header, body}) => {
   return (
-      <Box marginLeft={5} bg="white" shadow={2} rounded="lg" maxWidth="90%" marginTop={"3"}>
+      <Box marginLeft={3} marginRight={3} bg="white" shadow={2} rounded="lg" maxWidth="90%" marginTop={"3"}>
         <Image
-          source={uri}
+          source={ruta}
           alt="image base"
           resizeMode="cover"
           height={150}
           roundedTop="md"
+          fallbackSource={'https://picsum.photos/200/200'}
         />
         <Stack space={4} p={[4, 4, 8]}>
           <Heading size={['md', 'lg', 'md']} noOfLines={2}>
