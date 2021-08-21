@@ -29,24 +29,25 @@ export const HomeScreen = () => {
           </Text>
           <TouchableOpacity onPress={() => setShowModal(true)}>
             <Card
-              uri={{uri:require('../../../assets/san juan del sur.jpg')}}
+              ruta={require("../../../assets/san juan del sur.jpg")}
               header="Rio San Juan"
               body="Es uno de los destinos turísticos más importantes de este país centroamericano gracias a la frescura y serenidad de las
                 aguas de su bahía, así como por las varias playas cercanas aptas para el surf (El Remanso, El Coco, Marsella, Majagual, Maderas,
                 Las Salinas, Gigante y El Astillero)"
             />
           </TouchableOpacity>
-          <TouchableOpacity>
+          
+           <TouchableOpacity>
             <Card
-              uri={{uri: require('../../../assets/isla de ometepe.webp')}}
+              ruta={require('../../../assets/isla de ometepe.webp')}
               header="Isla de Ometepe"
               body="Ometepe es una isla en el vasto lago de Nicaragua, al suroeste de Nicaragua. Es conocida por sus volcanes gemelos. El volcán activo 
           Concepción está en el norte de la isla. Al sur, los senderos recorren el volcán Maderas hasta las cascadas de San Ramón. El Museo de Ometepe, en la ciudad de Altagracia,"
             />
-          </TouchableOpacity>
+          </TouchableOpacity> 
         </Center>
       </ScrollView>
-      {/* <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <Modal.Content width="100%" height="100%">
           <Modal.Header>San Juan</Modal.Header>
           <Modal.CloseButton />
@@ -124,7 +125,7 @@ export const HomeScreen = () => {
                 Comentarios
               </Text>
             </Center>
-            {!token ? (
+            {token ? (
               <TextArea
                 aria-label="t1Disabled"
                 placeholder="Para realizar comentarios debe iniciar session"
@@ -141,7 +142,7 @@ export const HomeScreen = () => {
             )}
           </ScrollView>
         </Modal.Content>
-      </Modal> */}
+      </Modal> 
     </NativeBaseProvider>
   )
 }
